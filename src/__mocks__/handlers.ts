@@ -7,6 +7,14 @@ export const handlers = [
   http.get('/api/events', () => {
     return HttpResponse.json({ events });
   }),
+  http.post('/api/events-list', async ({ request }) => {
+    const newEvents = (await request.json()) as Event[];
+    let id = events.length + 1;
+    newEvents.forEach((event) => {
+      event.id = String(id++);
+    });
+    return HttpResponse.json(newEvents, { status: 201 });
+  }),
 
   http.post('/api/events', async ({ request }) => {
     const newEvent = (await request.json()) as Event;
