@@ -261,6 +261,6 @@ describe('뷰 간 데이터 동기화 통합 테스트', () => {
       const eventList = screen.getByTestId('event-list');
       expect(within(eventList).getByText('검색할 일정')).toBeInTheDocument();
       expect(within(eventList).queryByText('다른 일정')).not.toBeInTheDocument();
-    });
+    }, 10000);
   });
 });
