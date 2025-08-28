@@ -6,7 +6,9 @@ on:
       - synchronize
       - opened
       - reopened
-
+  push:
+    branches:
+      - main
   workflow_dispatch:
 
 jobs:
@@ -46,6 +48,9 @@ jobs:
         run: |
           pnpm install
           pnpm run test
+  e2e:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
         with:
