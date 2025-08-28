@@ -1,7 +1,7 @@
 import { defineConfig, devices } from '@playwright/test';
 
 export default defineConfig({
-  testDir: './src/__tests__', // 경로 수정
+  testDir: './e2e', // 경로 수정
   testMatch: '**/*.e2e.spec.ts', // e2e 테스트 파일만 실행
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
