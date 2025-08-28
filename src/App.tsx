@@ -472,7 +472,6 @@ function App() {
               label="반복 일정"
             />
           </FormControl>
-
           <FormControl fullWidth>
             <FormLabel htmlFor="notification">알림 설정</FormLabel>
             <Select
@@ -480,9 +479,10 @@ function App() {
               size="small"
               value={notificationTime}
               onChange={(e) => setNotificationTime(Number(e.target.value))}
+              aria-label="알림 설정"
             >
               {notificationOptions.map((option) => (
-                <MenuItem key={option.value} value={option.value}>
+                <MenuItem aria-label={option.label} key={option.value} value={option.value}>
                   {option.label}
                 </MenuItem>
               ))}
