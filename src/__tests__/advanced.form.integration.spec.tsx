@@ -55,7 +55,7 @@ const saveSchedule = async (
   await user.click(screen.getByTestId('event-submit-button'));
 };
 
-describe('일정 생성 테스트', () => {
+describe('시나리오 1: 일정 생성 테스트', () => {
   it('새 일정을 생성하고 제출한 후 폼이 완전히 초기화됩니다.', async () => {
     // 모든 입력 필드가 비워지고 기본값들이 올바르게 설정되는지 확인
     setupMockHandlerCreation();
@@ -122,7 +122,7 @@ describe('일정 생성 테스트', () => {
   });
 });
 
-describe('일정 편집 테스트', () => {
+describe('시나리오 2: 일정 편집 테스트', () => {
   it('기존 일정을 편집 모드로 전환했을 때 모든 폼 필드가 올바르게 로드됩니다.', async () => {
     // 제목, 날짜, 시간, 설명, 위치, 카테고리, 알림 설정이 모두 정확하게 표시되는지 확인
     setupMockHandlerUpdating();
@@ -167,7 +167,7 @@ describe('일정 편집 테스트', () => {
   });
 });
 
-describe('반복 테스트', () => {
+describe('시나리오 3: 반복 테스트', () => {
   it('반복 일정 체크박스가 체크되어있을때 반복일정 폼이 존재합니다.', async () => {
     const { user } = setup(<App />);
     // 반복 일정 체크박스를 클릭했을 때 반복 기간, 종료시간 폼이 추가되었는지 확인
